@@ -1,0 +1,16 @@
+<div class="todos-list__item" [class.completed]="todo.completed" (click)="onClicked()">
+    <div class="todos-list__item--check-box">
+      <i class="material-icons">done</i>
+    </div>
+    <div class="todos-list__item--text">
+      {{todo.text}}
+    </div>
+    <div class="todos-list__item-controls-box" (click)="$event.stopPropagation()">
+        <div class="todos-list__item-controls--button" [appToolTip]="test" (click)="onEdit()">
+            <i class="material-icons">edit</i>
+        </div>
+        <div class="todos-list__item-controls--button is-danger" (click)="onDelete()">
+            <i class="material-icons">delete</i>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+.special-buttons {
+    border: none;
+    background: linear-gradient(to right, rgb(236, 72, 140), rgb(240, 54, 82));
+    opacity: 0.95;
+    transition: all 0.2s ease-in;
+    i, span {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    &:hover {
+        opacity:1;
+        box-shadow: 0px 0px 0px 3px rgba(#000, 0.2)
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+
+    i.material-icons {
+        margin-right: 5px;
+        margin-left: -3px;
+    }
+
+}

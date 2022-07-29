@@ -1,0 +1,17 @@
+//@at-root
+@import '../../node_modules/bulma/bulma.sass';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'tippy.js/dist/tippy.css'; 
+
+// base
+@import './base/base';
+@import './base/fonts';
+
+// compoennts
+@import './components/buttons';
+@import './components/todos-list';
+
+
+// Layouts
+@import './layout/container';
+@import './layout/header';

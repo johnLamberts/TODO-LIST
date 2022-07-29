@@ -1,0 +1,55 @@
+<section class="heading-section">
+  <h1 class="title is-1 has-text-centered heading-section__title">Task Lister Completion</h1>
+  <h5 class="subtitle is-4 has-text-centered">John Lambert</h5>
+</section>
+
+<div class="container sticky-box-container">
+  <div class="add-todo-box">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <h2 class="title is-5 header">Add new things to accomplish</h2>
+
+      <div class="field is-grouped my-0">
+        <p class="control is-expanded">
+          <input
+            ngModel
+            #todoTextField="ngModel"
+            required
+            minlength="2"
+            name="text"
+            class="input"
+            type="text"
+            placeholder="Type todo here..."
+          />
+        </p>
+        <p class="control">
+          <button type="submit" class="button special-buttons">
+            <i class="material-icons">add</i>
+            <span>Add</span>
+          </button>
+        </p>
+      </div>
+      <div *ngIf="todoTextField.invalid && error">
+        <p class="help is-danger" *ngIf="todoTextField.errors.required">
+          Please enter the text...
+        </p>
+        <p class="help is-danger" *ngIf="todoTextField.errors.minlength">
+          Todo text must be atleast 2 characters.
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="todos-list">
+      <app-todo-item
+        *ngFor="let todo of todos"
+        [todo]="todo"
+        (todoClicked)="setCompleted(todo)"
+        (editClicked)="setEdit(todo)"
+        (deleteClicked)="deleteTodo(todo)"
+      ></app-todo-item>
+    </div>
+  </div>
+</section>

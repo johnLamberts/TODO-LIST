@@ -1,0 +1,25 @@
+
+.container {
+    max-width: 800px;
+    // position: relative;
+
+
+    .add-todo-box {
+        // position: absolute;
+        // top: -20px;
+        // width: inherit;
+        margin-top: -68px;
+        background-color: #fff;
+        padding: 25px;
+        // border: 1px solid #000;
+        border-radius: 4px;
+        box-shadow: 0rem 0.5rem 1.1rem rgba($color: #000000, $alpha: 0.18);
+    }
+}
+
+
+.sticky-box-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

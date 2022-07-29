@@ -1,0 +1,131 @@
+.todos-list {
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    // flex-direction: row;
+
+    font-size: 18px;
+    padding: 35px 15px;
+
+    border-bottom: 1px solid #f2f3f5;
+
+
+    position: relative;
+
+    &.completed {
+      color: #aaa;
+    }
+
+    &--check-box {
+      display: flex;
+      flex-shrink: 0;
+      border: 2px solid #eee;
+      border-radius: 50%;
+
+      margin-right: 20px;
+
+      height: 28px;
+      width: 28px;
+
+      transition: background-color 0.2s ease, border-color 0.2s ease-out;
+
+      i.material-icons {
+        font-size: 20px;
+        color: #333;
+
+        margin: auto;
+
+        // hide by default
+        opacity: 0;
+
+        transition: opacity 0.2s ease-in;
+      }
+
+      &:hover {
+        i.material-icons {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.completed &--check-box {
+      background: rgba(11, 223, 170);
+      border-color: rgba(11, 223, 170);
+
+      i.material-icons {
+        opacity: 1;
+      }
+    }
+
+    &:hover &--check-box {
+      // background: #eee;
+      i.material-icons {
+        opacity: 0.28;
+      }
+    }
+
+    &-controls {
+      &-box {
+        display: flex;
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+
+        transition: opacity 0.2s ease-in, visibility 0.2s ease-out, transform 0.2s ease-in-out;
+      }
+
+      &--button {
+        display: flex;
+        background: #f5f7f8;
+        padding: 7px 15px;
+
+        color: #333;
+
+        i.material-icons {
+            color: #555;
+          font-size: 20px;
+        }
+
+        &:first-of-type {
+          border-top-left-radius: 7px;
+        }
+
+        &:last-of-type {
+          border-top-right-radius: 7px;
+        }
+
+        &:hover {
+          background: #eee;
+
+          i.material-icons {
+            color: #333;
+          }
+        }
+
+        &:active {
+          background: #e5e7e8;
+        }
+
+        &.is-danger:hover i.material-icons {
+            color: rgb(155, 27, 27);
+        }
+        &.is-danger:active i.material-icons {
+          color: rgb(189, 37, 37);
+        }
+      }
+    }
+
+
+    &:hover &-controls-box {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.3s;
+        transform: translateY(0);
+    }
+  }
+}
