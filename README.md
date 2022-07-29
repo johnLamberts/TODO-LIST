@@ -4,6 +4,17 @@ This project served as educational purposes.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
+
+## Main Technology
+
+  -Angular@latest-version
+  -BulmaCSS
+  
+## General Setup
+  
+  -type, -npm install 
+  -for running the app simply type on the cli, -ng serve
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
